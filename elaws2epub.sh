@@ -4,12 +4,12 @@ mkdir $1-epub
 cd $1-epub
 
 # eLaws XMLをHTMLBookへ変換
-xsltproc --noout ../$1 -o $1.html
+xsltproc --noout -o $1.html ../../elaws2htmlbook.xsl ../$1
 if [ $? != 0 ]; then
 	exit 1
 fi
 # XSLTでは不可能な変換を実施
-python3 ../elawstidy.py < $1.html > $1.tidy.html
+python3 ../../elawstidy.py < $1.html > $1.tidy.html
 if [ $? != 0 ]; then
 	exit 1
 fi
@@ -21,11 +21,11 @@ fi
 
 # HTMLBookでePubの元データを生成
 # HTMLBookのパス: 絶対パスで記述するほうが無難
-HTMLBook=../HTMLBook
+HTMLBook=../../HTMLBook
 mkdir OEBPS
 # HTMLBookのCSSをそのまま使う場合
 # cp ../$HTMLBook/stylesheets/epub/epub.css OEBPS/
-cp ../elaws.css OEBPS/epub.css
+cp ../../elaws.css OEBPS/epub.css
 xsltproc $HTMLBook/htmlbook-xsl/epub.xsl $1.lint.html
 if [ $? != 0 ]; then
 	exit 1
@@ -36,5 +36,5 @@ zip -r ../$1.epub META-INF/ OEBPS/
 cd ..
 
 # kindlegenがあればePubからmobiを生成
-KINDLEGEN=.
+KINDLEGEN=..
 $KINDLEGEN/kindlegen $1.epub -o $1.mobi
