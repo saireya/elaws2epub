@@ -2,7 +2,7 @@
 ## About (概要)
 [e-Gov法令検索](http://elaws.e-gov.go.jp)で公開されている法令のXMLデータから電子書籍を生成し、Kindleなどの *電子書籍リーダ* やMicrosoft Edgeなどの *ePub対応ブラウザ* で閲覧できるようにするスクリプトです。
 
-- 経済産業省e-Lawsの **[法令標準XMLスキーマ](http://search.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&id=145208896)** に準拠したXMLが対象です。
+- 総務省e-Lawsの **[法令標準XMLスキーマ](http://search.e-gov.go.jp/servlet/Public?CLASSNAME=PCMMSTDETAIL&id=145208896)** に準拠したXMLが対象です。
 - 頻用の要素以外はほぼ未テストなので、不具合がある可能性が高いです。
 
 ## Requirements (準備)
