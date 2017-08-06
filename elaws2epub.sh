@@ -37,4 +37,4 @@ cd ..
 
 # kindlegenがあればePubからmobiを生成
 KINDLEGEN=..
-$KINDLEGEN/kindlegen $1.epub -o $1.mobi
+$KINDLEGEN/kindlegen $1.epub -o `basename $1.mobi`
