@@ -41,3 +41,7 @@ ePubからKindleで読めるmobi形式に変換するには、Amazonが公開し
 
 ## Support/Contact
 XSLTなどはPublic domainとしますが、不具合などがあればIssuesへ投げてください。
+
+## Acknowledgements
+- [HTMLBook Specification日本語訳 - JAGAT XMLパブリッシング準研究会](http://jagat-xml-publishing-study-group.github.io/HTMLBook-JA)
+- [オライリーが公開しているHTMLBookでEPUBはつくれるのか - 買い物ログ別館](https://skoji.jp/blog/2014/03/htmlbookepub.html)
