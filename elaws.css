@@ -1,0 +1,28 @@
+h1, h2, h3, h4, h5, h6, strong, em, b, th, figcaption
+{
+	font-family: sans-serif;
+}
+.label
+{
+	/* 番号やラベルが一致しないことがあるので表示しない */
+	display: none;
+}
+ol > li
+{
+	/* ラベルが用意されているので表示しない */
+	list-style-type: none;
+}
+
+section[data-type="titlepage"], div[data-type="part"]
+{
+	margin: auto 10%;
+}
+/* titlepage css from HTMLBook */
+section[data-type="titlepage"] h1, div[data-type="part"] h1
+{
+	border-bottom: 1px solid #d8d8d8;
+	margin-top: 100px;
+	padding-bottom: 10px;
+	font-size: 2em;
+}
+
