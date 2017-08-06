@@ -25,4 +25,12 @@ section[data-type="titlepage"] h1, div[data-type="part"] h1
 	padding-bottom: 10px;
 	font-size: 2em;
 }
-
+table > tr:first-child
+{
+	border-bottom: 1px solid #d8d8d8;
+}
+table > tr:nth-child(even)
+{
+	color: #000033;
+	background-color: #ffffcc;
+}
