@@ -112,7 +112,12 @@
  </xsl:template>
 
   <!--  MainProvision ========================================================= -->
- <xsl:template match="MainProvision"><xsl:apply-templates/></xsl:template>
+ <xsl:template match="MainProvision">
+  <xsl:choose>
+   <xsl:when test="count(Part)=0 and count(Chapter)=0"><section data-type="chapter"><xsl:apply-templates/></section></xsl:when>
+   <xsl:otherwise><xsl:apply-templates/></xsl:otherwise>
+  </xsl:choose>
+ </xsl:template>
 
   <!--  Part ================================================================== -->
  <xsl:template match="Part">
