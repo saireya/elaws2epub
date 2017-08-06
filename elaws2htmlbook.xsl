@@ -271,14 +271,16 @@
  <xsl:template match="TableRow">            <tr><xsl:apply-templates/></tr></xsl:template>
  <xsl:template match="TableColumn">
   <td>
-   <xsl:attribute name="style">
-    <xsl:if test="@BorderTop">border-top-style: <xsl:value-of select="@BorderTop"/>;</xsl:if>
-    <xsl:if test="@BorderBottom">border-bottom-style: <xsl:value-of select="@BorderTop"/>;</xsl:if>
-    <xsl:if test="@BorderLeft">border-left-style: <xsl:value-of select="@BorderLeft"/>;</xsl:if>
-    <xsl:if test="@BorderRight">border-right-style: <xsl:value-of select="@BorderRight"/>;</xsl:if>
-    <xsl:if test="@Align">text-align: <xsl:value-of select="@Align"/>;</xsl:if>
-    <xsl:if test="@Valign">vertical-align: <xsl:value-of select="@Valign"/>;</xsl:if>
-   </xsl:attribute>
+   <xsl:if test="@BorderTop or @BorderBottom or @BorderLeft or @BorderRight or @Align or @Valign">
+    <xsl:attribute name="style">
+     <xsl:if test="@BorderTop">border-top-style: <xsl:value-of select="@BorderTop"/>;</xsl:if>
+     <xsl:if test="@BorderBottom">border-bottom-style: <xsl:value-of select="@BorderTop"/>;</xsl:if>
+     <xsl:if test="@BorderLeft">border-left-style: <xsl:value-of select="@BorderLeft"/>;</xsl:if>
+     <xsl:if test="@BorderRight">border-right-style: <xsl:value-of select="@BorderRight"/>;</xsl:if>
+     <xsl:if test="@Align">text-align: <xsl:value-of select="@Align"/>;</xsl:if>
+     <xsl:if test="@Valign">vertical-align: <xsl:value-of select="@Valign"/>;</xsl:if>
+    </xsl:attribute>
+   </xsl:if>
    <xsl:if test="@rowspan"><xsl:attribute name="rowspan"><xsl:value-of select="@rowspan"/></xsl:attribute></xsl:if>
    <xsl:if test="@colspan"><xsl:attribute name="colspan"><xsl:value-of select="@colspan"/></xsl:attribute></xsl:if>
    <xsl:apply-templates/>
