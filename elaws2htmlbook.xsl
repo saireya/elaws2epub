@@ -175,7 +175,7 @@
   </section>
   <xsl:text>&#10;</xsl:text>
  </xsl:template>
- <xsl:template match="ArticleCaption"><small class="ArticleCaption"><xsl:apply-templates/></small></xsl:template>
+ <xsl:template match="ArticleCaption"><xsl:apply-templates/></xsl:template>
 
   <!--  Paragraph ============================================================= -->
  <xsl:template match="Paragraph">
