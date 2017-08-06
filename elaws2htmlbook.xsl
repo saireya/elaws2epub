@@ -180,7 +180,7 @@
   <!--  Paragraph ============================================================= -->
  <xsl:template match="Paragraph">
   <section data-type="sect5">
-   <xsl:if test="ParagraphNum/text()!=''"><h6><xsl:apply-templates select="ParagraphNum"/><xsl:apply-templates select="ParagraphCaption"/></h6></xsl:if>
+   <xsl:if test="ParagraphNum/text()!=''"><h5><xsl:apply-templates select="ParagraphNum"/><xsl:apply-templates select="ParagraphCaption"/></h5></xsl:if>
    <p><xsl:apply-templates select="ParagraphSentence"/></p>
    <xsl:apply-templates select="*[not(starts-with(name(), 'Paragraph'))]"/>
   </section>
