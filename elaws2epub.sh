@@ -26,7 +26,7 @@ mkdir OEBPS
 # HTMLBookのCSSをそのまま使う場合
 # cp ../$HTMLBook/stylesheets/epub/epub.css OEBPS/
 cp ../../elaws.css OEBPS/epub.css
-xsltproc $HTMLBook/htmlbook-xsl/epub.xsl $1.lint.html
+xsltproc --param external.assets.list "''" $HTMLBook/htmlbook-xsl/epub.xsl $1.lint.html
 if [ $? != 0 ]; then
 	exit 1
 fi
