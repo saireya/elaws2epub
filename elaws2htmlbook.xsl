@@ -90,7 +90,7 @@
 
  <xsl:template match="TOCSupplProvision">
   <li>
-   <a href="#sp0"><xsl:apply-templates select="SupplProvisionLabel"/></a>
+   <a href="#sp1"><xsl:apply-templates select="SupplProvisionLabel"/></a>
    <ol><xsl:apply-templates select="*[starts-with(name(), 'TOC')]"/></ol>
   </li>
   <xsl:text>&#10;</xsl:text>
@@ -232,7 +232,7 @@
   <!--  SupplProvision ======================================================== -->
  <xsl:template match="SupplProvision">
   <section data-type="appendix">
-   <xsl:attribute name="id">sp<xsl:value-of select="position()-3"/></xsl:attribute>
+   <xsl:attribute name="id">sp<xsl:number/></xsl:attribute>
    <h1><xsl:apply-templates select="SupplProvisionLabel"/><xsl:if test="@AmendLawNum"><small class="AmendLawNum">(<xsl:value-of select="@AmendLawNum"/>)</small></xsl:if></h1>
    <xsl:text>&#10;</xsl:text>
    <xsl:choose>
