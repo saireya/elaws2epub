@@ -1,3 +1,14 @@
+body
+{
+	/* 縦書きの場合 */
+	/* 行間を横書きの場合より広げる */
+	/*
+	writing-mode: vertical-rl;
+	-epub-writing-mode: vertical-rl;
+	line-height: 1.75;
+	*/
+}
+
 h1, h2, h3, h4, h5, h6, strong, em, b, th, figcaption
 {
 	font-family: sans-serif;
