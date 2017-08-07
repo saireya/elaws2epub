@@ -13,6 +13,10 @@ h1, h2, h3, h4, h5, h6, strong, em, b, th, figcaption
 {
 	font-family: sans-serif;
 }
+p
+{
+	text-indent: 1em;
+}
 .label
 {
 	/* 番号やラベルが一致しないことがあるので表示しない */
