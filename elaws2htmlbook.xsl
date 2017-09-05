@@ -23,7 +23,7 @@
    <xsl:text>&#10;</xsl:text>
    <xsl:apply-templates select="*[not(name()='LawTitle') and not(name()='EnactStatement')]"/>
    <xsl:text>&#10;</xsl:text>
-   <section data-type="index"/>
+   <section role="doc-index" data-type="index"/>
   </body>
  </xsl:template>
 
@@ -105,7 +105,7 @@
 
   <!--  Preamble ============================================================== -->
  <xsl:template match="Preamble">
-  <section data-type="preface" id="Preamble">
+  <section role="doc-preface" data-type="preface" id="Preamble">
    <h1>前文</h1>
    <xsl:apply-templates/>
   </section>
@@ -114,14 +114,14 @@
   <!--  MainProvision ========================================================= -->
  <xsl:template match="MainProvision">
   <xsl:choose>
-   <xsl:when test="count(Part)=0 and count(Chapter)=0"><section data-type="chapter"><xsl:apply-templates/></section></xsl:when>
+   <xsl:when test="count(Part)=0 and count(Chapter)=0"><section role="doc-chapter" data-type="chapter"><xsl:apply-templates/></section></xsl:when>
    <xsl:otherwise><xsl:apply-templates/></xsl:otherwise>
   </xsl:choose>
  </xsl:template>
 
   <!--  Part ================================================================== -->
  <xsl:template match="Part">
-  <div data-type="part">
+  <div role="doc-part" data-type="part">
    <xsl:attribute name="id">p<xsl:value-of select="@Num"/></xsl:attribute>
    <h1><xsl:apply-templates select="*[contains(name(), 'Title')]"/></h1>
    <xsl:text>&#10;</xsl:text>
@@ -132,7 +132,7 @@
 
   <!--  Chapter =============================================================== -->
  <xsl:template match="Chapter">
-  <section data-type="chapter">
+  <section role="doc-chapter" data-type="chapter">
    <xsl:attribute name="id">p<xsl:value-of select="../@Num"/>c<xsl:value-of select="@Num"/></xsl:attribute>
    <h1><xsl:apply-templates select="*[contains(name(), 'Title')]"/></h1>
    <xsl:text>&#10;</xsl:text>
@@ -231,7 +231,7 @@
 
   <!--  SupplProvision ======================================================== -->
  <xsl:template match="SupplProvision">
-  <section data-type="appendix">
+  <section role="doc-appendix" data-type="appendix">
    <xsl:attribute name="id">sp<xsl:number/></xsl:attribute>
    <h1><xsl:apply-templates select="SupplProvisionLabel"/><xsl:if test="@AmendLawNum"><small class="AmendLawNum">(<xsl:value-of select="@AmendLawNum"/>)</small></xsl:if></h1>
    <xsl:text>&#10;</xsl:text>
@@ -250,7 +250,7 @@
   <!--  Appdx ================================================================= -->
   <!--  AppdxFig ============================================================== -->
  <xsl:template match="SupplProvisionAppdxTable | SupplProvisionAppdxStyle | SupplProvisionAppdx | AppdxTable | AppdxNote | AppdxNote | AppdxFormat | Appdx | AppdxFig">
-  <section data-type="appendix"><xsl:apply-templates/></section>
+  <section role="doc-appendix" data-type="appendix"><xsl:apply-templates/></section>
  </xsl:template>
 
  <xsl:template match="SupplProvisionAppdxTableTitle | SupplProvisionAppdxStyleTitle | AppdxTableTitle | AppdxNoteTitle | AppdxNoteTitle | AppdxFormatTitle | AppdxFigTitle">
