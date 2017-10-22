@@ -5,7 +5,7 @@
 
   <!--  Law =================================================================== -->
  <xsl:template match="Law">
-  <html><xsl:apply-templates select="LawBody"/></html>
+  <html lang="ja"><xsl:apply-templates select="LawBody"/></html>
  </xsl:template>
 
   <!--  LawBody =============================================================== -->
